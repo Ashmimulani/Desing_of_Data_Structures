@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int val;
+    struct Node* next;
+};
+
+class LL {
+public:
+    struct Node* start;  // Head pointer of the linked list
+
+    LL() {
+        start = nullptr;
+    }
+
+    struct Node* getNode() {
+        struct Node* p = new Node;
+        cout << "Give value for new node" << endl;
+        cin >> p->val;
+        p->next = nullptr;
+        return p;
+    }
+};
+
+int main() {
+    LL b;
+    b.start = b.getNode();
+
+    // Just to check if value is assigned correctly
+    cout << "Value of start node: " << b.start->val << endl;
+
+    return 0;
+}
